@@ -12,11 +12,29 @@
 </head>
 <body>
 
-<%-- <jsp:include page="../header.jsp"></jsp:include>
+<jsp:include page="../header.jsp"></jsp:include>
+
+<table>
+
+<tr>
+	<th>번호</th><th>닉네임</th><th>아이디</th><th>비번</th>
+</tr>
+<c:forEach items="${list }" var="m">
+<tr>
+	<td>${m.hno}</td>
+	<td>${m.name}</td>
+	<td>${m.id}</td>
+	<td>${m.password}</td>
+</tr>
 
 
 
-<jsp:include page="../footer.jsp"></jsp:include> --%>
+</c:forEach>
+</table>
+
+
+
+<jsp:include page="../footer.jsp"></jsp:include>
 
 </body>
 </html>

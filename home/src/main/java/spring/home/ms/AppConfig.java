@@ -3,7 +3,6 @@ package spring.home.ms;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
-import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -23,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 	"classpath:/spring/home/ms/conf/sec.properties"})
 @MapperScan("spring/home/ms/dao")
 
-// Æ®·£Àè¼Ç °ü¸®ÀÚ¸¦ È£¶ó¼ºÈ­ÇÏ·Á¸é ´ÙÀ½ ¾Ö³ëÅ×ÀÌ¼Ç
+// íŠ¸ëœì­ì…˜ ê´€ë¦¬ìë¥¼ í˜¸ë¼ì„±í™”í•˜ë ¤ë©´ ë‹¤ìŒ ì• ë…¸í…Œì´ì…˜
 @EnableTransactionManagement
 public class AppConfig {
 	
@@ -31,13 +30,13 @@ public class AppConfig {
 	Environment env;
 	
 	public AppConfig() {
-		System.out.println("AppConfig() È£ÃâµÊ!");
+		System.out.println("AppConfig() í˜¸ì¶œë¨!");
 	}
 	
 	@Bean
 	public DataSource dataSource() {
 		
-		System.out.println("DataSource °´Ã¼ »ı¼º!");
+		System.out.println("DataSource ê°ì²´ ìƒì„±!");
 		
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName(env.getProperty("jdbc.driver"));
@@ -53,18 +52,18 @@ public class AppConfig {
 	public SqlSessionFactory sqlSessionFactory(
 			DataSource dataSource,
 			ApplicationContext appCtx) {
-		System.out.println("SqlSessionFactory °´Ã¼ »ı¼º!");
+		System.out.println("SqlSessionFactory ê°ì²´ ìƒì„±!");
 		
 		try {
 		
 			SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
 			
-			// DB Ä¿³Ø¼ÇÇ®À» °ü¸±ÇØÁÖ´Â °´Ã¼
+			// DB ì»¤ë„¥ì…˜í’€ì„ ê´€ë¦´í•´ì£¼ëŠ” ê°ì²´
 			factory.setDataSource(dataSource);
 			
-			// SQL ¸ÊÆÛ ÆÄÀÏ¿¡¼­ µµ¸ŞÀÎ °´Ã¼ÀÇ º°¸íÀ» »ç¿ëÇÏ·Á¸é
-			// µµ¸ŞÀÎ °´Ã¼°¡ µé¾î ÀÖ´Â ÆĞÅ°Áö¸¦ ÁöÁ¤ÇØ¾ß ÇÑ´Ù.
-			// ±×·¯¸é Mybatis°¡ ÇØ´ç ÆĞÅ°ÁöÀÇ ¸ğµç Å¬·¡½º¿¡ ´ëÇØ º°¸íÀ» ÀÚµ¿À¸·Î »ı¼º
+			// SQL ë§µí¼ íŒŒì¼ì—ì„œ ë„ë©”ì¸ ê°ì²´ì˜ ë³„ëª…ì„ ì‚¬ìš©í•˜ë ¤ë©´
+			// ë„ë©”ì¸ ê°ì²´ê°€ ë“¤ì–´ ìˆëŠ” íŒ¨í‚¤ì§€ë¥¼ ì§€ì •í•´ì•¼ í•œë‹¤.
+			// ê·¸ëŸ¬ë©´ Mybatisê°€ í•´ë‹¹ íŒ¨í‚¤ì§€ì˜ ëª¨ë“  í´ë˜ìŠ¤ì— ëŒ€í•´ ë³„ëª…ì„ ìë™ìœ¼ë¡œ ìƒì„±
 			factory.setTypeAliasesPackage("spring.home.ms.domain");
 			
 			factory.setMapperLocations(appCtx.getResources(
@@ -78,18 +77,18 @@ public class AppConfig {
 		
 	}
 
-	// Æ®·£Àè¼Ç °ü¸®ÀÚÀÇ ÀÌ¸§Àº ¹İµå½Ã "trancactionManger"ÀÌ¾î¾ß ÇÑ´Ù.
-	// ±×·¡¼­ ¸Ş¼­µå ÀÌ¸§À» ´ÙÀ½°ú °°ÀÌ ÇØ¾ßÇÑ´Ù.
-	// Spring¿¡¼­ Æ®·£Àè¼Ç °ü¸®ÀÚ¸¦ Ã£À» ‹š ÀÌ ÀÌ¸§À¸·Î Ã£´Â´Ù.
-	// ¸¸¾à Æ®·£Àè¼Ç ÀÌ¸§À» ´Ù¸¥ ÀÌ¸§À» Áö¾ú´Ù¸é
-	// Æ®·£Àè¼Ç °ü¸® ¼³Á¤¿¡¼­ ±× ÀÌ¸§À» ¾Ë·ÁÁà¾ß ÇÑ´Ù.
+	// íŠ¸ëœì­ì…˜ ê´€ë¦¬ìì˜ ì´ë¦„ì€ ë°˜ë“œì‹œ "trancactionManger"ì´ì–´ì•¼ í•œë‹¤.
+	// ê·¸ë˜ì„œ ë©”ì„œë“œ ì´ë¦„ì„ ë‹¤ìŒê³¼ ê°™ì´ í•´ì•¼í•œë‹¤.
+	// Springì—ì„œ íŠ¸ëœì­ì…˜ ê´€ë¦¬ìë¥¼ ì°¾ì„ Â‹Âš ì´ ì´ë¦„ìœ¼ë¡œ ì°¾ëŠ”ë‹¤.
+	// ë§Œì•½ íŠ¸ëœì­ì…˜ ì´ë¦„ì„ ë‹¤ë¥¸ ì´ë¦„ì„ ì§€ì—ˆë‹¤ë©´
+	// íŠ¸ëœì­ì…˜ ê´€ë¦¬ ì„¤ì •ì—ì„œ ê·¸ ì´ë¦„ì„ ì•Œë ¤ì¤˜ì•¼ í•œë‹¤.
 	public PlatformTransactionManager transactionManager(
 			DataSource dataSource) {
-		// Æ®·£Àè¼Ç °ü¸®ÀÚ°¡ ÇÏ´Â ÀÏÀº DB Ä¿³Ø¼ÇÀÇ commit°ú rollbackÀ» ´Ù·ç´Â °ÍÀÌ´Ù.
-		// µû¶ó¼­ Æ®·£Àè¼Ç °ü¸®ÀÚ´Â DB Ä¿³Ø¼ÇÀ» Á¦°øÇØÁÖ´Â
-		// DataSource(DB Ä¿³Ø¼Ç Ç®)°¡ ÇÊ¿äÇÏ´Ù.
-		// ±×·¡¼­ Æ®·£Àè¼Ç °ü¸®ÀÚ¸¦ ¸¸µé ‹š ¹İµå½Ã DataSource °´Ã¼¸¦ ³Ñ°ÜÁà¾ß ÇÑ´Ù.
-		// ¹°·Ğ °ü¸®ÀÚ °´Ã¼¸¦ ¸¸µç ÈÄ¿¡ ¼¼ÅÍ¸¦ ¸¸µç ÈÄ¿¡ ¼¼ÅÍ¸¦ È£ÃâÇØ¼­ ³Ñ°ÜÁàµµ µÈ´Ù.
+		// íŠ¸ëœì­ì…˜ ê´€ë¦¬ìê°€ í•˜ëŠ” ì¼ì€ DB ì»¤ë„¥ì…˜ì˜ commitê³¼ rollbackì„ ë‹¤ë£¨ëŠ” ê²ƒì´ë‹¤.
+		// ë”°ë¼ì„œ íŠ¸ëœì­ì…˜ ê´€ë¦¬ìëŠ” DB ì»¤ë„¥ì…˜ì„ ì œê³µí•´ì£¼ëŠ”
+		// DataSource(DB ì»¤ë„¥ì…˜ í’€)ê°€ í•„ìš”í•˜ë‹¤.
+		// ê·¸ë˜ì„œ íŠ¸ëœì­ì…˜ ê´€ë¦¬ìë¥¼ ë§Œë“¤ Â‹Âš ë°˜ë“œì‹œ DataSource ê°ì²´ë¥¼ ë„˜ê²¨ì¤˜ì•¼ í•œë‹¤.
+		// ë¬¼ë¡  ê´€ë¦¬ì ê°ì²´ë¥¼ ë§Œë“  í›„ì— ì„¸í„°ë¥¼ ë§Œë“  í›„ì— ì„¸í„°ë¥¼ í˜¸ì¶œí•´ì„œ ë„˜ê²¨ì¤˜ë„ ëœë‹¤.
 		return new DataSourceTransactionManager(dataSource);
 	}
 	
