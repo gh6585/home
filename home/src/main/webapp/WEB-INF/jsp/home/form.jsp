@@ -44,7 +44,8 @@
 <div>
 
 <input type="submit" value="확인" onclick="location.href='../auth/signupend'">
-<input type="button" value="취소" onclick="location.reload()">
+<input type="button" value="취소" onclick="location.href='list'">
+<!-- <input type="button" value="취소" onclick="location.reload()"> -->
 </div>
 </form>
 

@@ -26,7 +26,7 @@
 </table>
 
   <button type="submit" name="button">확인</button>
-  <button type="button" name="button">취소</button>
+  <button type="button" name="button" onclick="location.href='../home/list'">취소</button>
 </form>
 </body>
 </html>
