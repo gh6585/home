@@ -7,14 +7,14 @@
 	
 	<resultMap type="Member" id="listMap">
 		<id column="hno" property="hno"/>
+		<result column="email" property="email"/>
 		<result column="id" property="id"/>
-		<result column="name" property="name"/>
 		<result column="password" property="password"/>
 	
 	</resultMap>
 	
 	
-	
+	<!-- 전체 목록 -->
 	<select id="userList" resultMap="listMap" parameterType="List">
 	
 	SELECT * 
@@ -22,11 +22,20 @@
 	
 	</select>
 	
-	<insert id="insert" parameterType="Member">
-		insert into home(id,name,password) 
-		values(#{id},#{name},#{password});
+	
+	<!-- 회원가입 -->
+	<insert id="insert"  parameterType="Member">
+		insert into home(email,id,password) 
+		values(#{email},#{id},#{password});
 		
 	</insert>
 	
+	<!-- 로그인 -->  
+	 <select id="findEmail" resultMap="listMap" parameterType="map">
+	 	select id 
+	 	from home 
+	 	where email=#{email} and password=#{password};
+	 
+	 </select>
 	  
 </mapper>

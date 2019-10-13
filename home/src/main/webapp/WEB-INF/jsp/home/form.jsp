@@ -18,15 +18,15 @@
    <table>
      <tbody>
        <tr>
-         <th>아이디</th>
+         <th>email</th>
          <td>
-           <input type="text" name="id">
+           <input type="email" name="email">
          </td>
        </tr>
        <tr>
-         <th>이름</th>
+         <th>아이디</th>
          <td>
-           <input type="text" name="name">
+           <input type="text" name="id">
          </td>
        </tr>
        <tr>
@@ -43,7 +43,7 @@
 
 <div>
 
-<input type="button" value="확인" onclick="location.href='../auth/signupend'">
+<input type="submit" value="확인" onclick="location.href='../auth/signupend'">
 <input type="button" value="취소" onclick="location.reload()">
 </div>
 </form>

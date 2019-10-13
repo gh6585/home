@@ -21,16 +21,16 @@ public class HomServiceImpl implements HomeService{
 	@Override
 	public Home getlist(int no) {
 		return memberDao.findHome(no);
-	}
+	};
 
 	@Override
 	public List<Member> userList() {
 		return memberDao.userList();
-	}
+	};
 
 	@Override
 	public void add(Member member) {
 		memberDao.insert(member);
-	}
+	};
 
 }

@@ -17,16 +17,19 @@
 	Member loginUser = (Member)session.getAttribute("loginUser");
 if (loginUser == null){
 %>
-	<li><a href="">로그인</a></li>
+	<li><a href="/app/auth/form">로그인</a></li>
+	<li><a href="/app/home/form">회원가입</a></li>
 <%
 } else {
-	String loginType ="회원";
+	
 
+%>
+	
+	<li>[<%=loginUser.getId()%>]</li>
+	<li>로그아웃</li>
+<% 
 }
 %>
-	<li><a href="/app/home/form">회원가입</a></li>
-
-
 </ul>
 
 </header>

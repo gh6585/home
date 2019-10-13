@@ -17,12 +17,12 @@
 <table>
 
 <tr>
-	<th>번호</th><th>닉네임</th><th>아이디</th><th>비번</th>
+	<th>번호</th><th>email</th><th>아이디</th><th>비번</th>
 </tr>
 <c:forEach items="${list }" var="m">
 <tr>
 	<td>${m.hno}</td>
-	<td>${m.name}</td>
+	<td>${m.email}</td>
 	<td>${m.id}</td>
 	<td>${m.password}</td>
 </tr>

@@ -1,12 +1,23 @@
 package spring.home.ms.web;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import spring.home.ms.domain.Member;
+import spring.home.ms.service.AuthService;
 
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
 	
+	AuthService authService;
+	
+	public AuthController(AuthService authService) {
+		this.authService = authService;
+		
+	}
 	
 	@RequestMapping("/signupend")
 	public void signupEnd(){
@@ -14,6 +25,24 @@ public class AuthController {
 		
 	}
 	
+	@RequestMapping("/form")
+	public void form() {} 
 	
-
+	@RequestMapping("/login")
+	public String login(String email,String password,HttpSession session) {
+		
+		
+		Member loginUser = authService.getMember(email, password);
+		
+		System.out.println(loginUser);
+		
+		if(loginUser != null) {
+			
+			session.setAttribute("loginUser", loginUser);
+			return "redirect:../home/list";
+		}
+		return "redirect:form";
+	} 
+	
+	
 }
