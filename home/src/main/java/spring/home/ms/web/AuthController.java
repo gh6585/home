@@ -43,6 +43,12 @@ public class AuthController {
 		}
 		return "redirect:form";
 	} 
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:../home/list";
+	}
 	
 	
 }
