@@ -10,10 +10,11 @@ header>ul{
     width: 100%;
 }
 
-header>ul>li{
+header>ul> li{
 	list-style: none;
     text-align: right;
     padding-right: 2%;
+    float: right;
 }
 
 footer>p{

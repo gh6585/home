@@ -19,7 +19,7 @@
 <tr>
 	<th>번호</th><th>email</th><th>아이디</th><th>비번</th>
 </tr>
-<c:forEach items="${list }" var="m">
+<c:forEach items="${list}" var="m">
 <tr>
 	<td>${m.hno}</td>
 	<td>${m.email}</td>
