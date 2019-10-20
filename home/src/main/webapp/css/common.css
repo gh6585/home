@@ -23,3 +23,23 @@ footer>p{
     text-align: center;
     width: 100%;
 }
+header>div>ul{
+	float:left;
+	list-style: none;
+	width: 100%;
+}
+#btable table{
+	width: 100%;
+	text-align: center;
+	
+}
+#btable button{
+	float: right;
+}
+#htable table{
+	width:100%;
+	text-align: center;
+	
+	
+}
+

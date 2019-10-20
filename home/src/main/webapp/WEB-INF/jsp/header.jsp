@@ -25,18 +25,24 @@ if (loginUser == null){
 
 %>
 	
-	<li>[<%=loginUser.getId()%>]</li>
 	<li><a href='/app/auth/logout'>로그아웃</a></li>
+	<li>[<%=loginUser.getId()%>]</li>
 <% 
 }
 %>
 </ul>
 
+<div>
+	<ul>
+		<li><a href='/app/board/boardList'>게시판</a></li>
+	</ul>
+</div>
+
 </header>
 
 <script>
 $('#main').click(function(){
-	location.href='list';
+	location.href='../home/list';
 });
 
 </script>

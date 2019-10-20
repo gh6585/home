@@ -7,9 +7,14 @@
 <html>
 <head>
 <meta charset="EUC-KR">
+<link >
 <title>게시물</title>
+<link rel='stylesheet' href='/css/common.css'>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
+<div id="btable">
+<button>추가</button>
 
    <table>
     <thead>
@@ -22,11 +27,11 @@
       <tr>
         <td>${b.bno}</td><td>${b.title}</td><td>${b.nik}</td><td>${b.bdt}</td><td>${b.vs }</td>
       </tr>
-      
+
       </c:forEach>
     </tbody>
   </table>
-
+</div>
 
 </body>
 </html>

@@ -14,6 +14,7 @@
 
 <jsp:include page="../header.jsp"></jsp:include>
 
+<div id="htable">
 <table>
 
 <tr>
@@ -31,7 +32,7 @@
 
 </c:forEach>
 </table>
-
+</div>
 
 
 <jsp:include page="../footer.jsp"></jsp:include>
