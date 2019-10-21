@@ -1,3 +1,4 @@
+<%@page import="spring.home.ms.domain.Member"%>
 <%@ page language="java" 
     contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
@@ -14,8 +15,22 @@
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
 <div id="btable">
-<button id="bform">추가</button>
+<%
+	Member loginUser = (Member)session.getAttribute("loginUser");
+	
+if(loginUser == null){
+	
 
+%>
+<button id="bform" onclick="location.href='../auth/form'">추가</button>
+
+<% 
+} else{
+%>
+<button id="bform" onclick="location.href='form'">추가</button>
+<%
+}
+%>
    <table>
     <thead>
       <tr>
@@ -35,11 +50,4 @@
 
 </body>
 
-<script>
-$("#bform").click(function(){
-	location.href="form";
-	
-});
-
-</script>
 </html>
