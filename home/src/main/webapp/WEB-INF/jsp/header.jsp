@@ -34,7 +34,7 @@ if (loginUser == null){
 
 <div>
 	<ul>
-		<li><a href='/app/board/boardList'>게시판</a></li>
+		<li><a href='/app/board/list'>게시판</a></li>
 	</ul>
 </div>
 

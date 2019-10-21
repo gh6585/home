@@ -25,11 +25,23 @@ public class boardController {
 	
 	
 	
-	@RequestMapping("boardList")
-	public void boardList(Model model) {
+	@RequestMapping("list")
+	public void list(Model model) {
 	
 		List<Board> list = boardService.boardList();
 		model.addAttribute("list",list);
 	}
+	
+	@RequestMapping("form")
+	public void form() {}
+	
+	
+	@RequestMapping("add")
+	public void add(Board board) {
+		
+		
+	}
+	
+	
 	
 }

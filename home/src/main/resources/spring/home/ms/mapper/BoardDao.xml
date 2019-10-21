@@ -21,10 +21,14 @@
 	SELECT bno,title,nik,bdt,vs
 	FROM board
 	
-	
-	
 	</select>
 	
+	<!-- insert -->
+	<insert id="insert">
+	insert into board (title,memo,nik,bdt) 
+	values(#{title},#{memo},#{nik},now());
+	
+	</insert>
 	
 	  
 </mapper>

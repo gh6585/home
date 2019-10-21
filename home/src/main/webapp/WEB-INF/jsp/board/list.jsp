@@ -14,7 +14,7 @@
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
 <div id="btable">
-<button>추가</button>
+<button id="bform">추가</button>
 
    <table>
     <thead>
@@ -34,4 +34,12 @@
 </div>
 
 </body>
+
+<script>
+$("#bform").click(function(){
+	location.href="form";
+	
+});
+
+</script>
 </html>

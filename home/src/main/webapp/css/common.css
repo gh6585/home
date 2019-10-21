@@ -17,16 +17,23 @@ header>ul> li{
     float: right;
 }
 
-footer>p{
-	position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
+footer{
+	
+	text-align: center;
+	
 }
+
 header>div>ul{
 	float:left;
 	list-style: none;
 	width: 100%;
+}
+
+#htable table{
+	width:100%;
+	text-align: center;
+	
+	
 }
 #btable table{
 	width: 100%;
@@ -36,10 +43,10 @@ header>div>ul{
 #btable button{
 	float: right;
 }
-#htable table{
-	width:100%;
-	text-align: center;
-	
+#bform table{
+	margin: auto;
 	
 }
-
+#bforminput{
+	text-align: center;
+}
