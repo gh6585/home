@@ -17,7 +17,7 @@
 		<td>Á¦¸ñ<input type="text" name="title"></td>
 	</tr>
 	<tr>
-		<td><textarea rows="20" cols="27"></textarea></td>
+		<td><textarea rows="20" cols="27" name="memo"></textarea></td>
 	</tr>
 	
 
