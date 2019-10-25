@@ -24,7 +24,7 @@
 	</select>
 	
 	<!-- insert -->
-	<insert id="insert">
+	<insert id="insert" parameterType="Board">
 	insert into board (title,memo,nik,bdt) 
 	values(#{title},#{memo},#{nik},now());
 	

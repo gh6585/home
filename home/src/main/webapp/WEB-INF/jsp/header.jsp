@@ -26,7 +26,7 @@ if (loginUser == null){
 %>
 	
 	<li><a href='/app/auth/logout'>·Î±×¾Æ¿ô</a></li>
-	<li>[<%=loginUser.getId()%>]</li>
+	<li>[<%=loginUser.getNik()%>]</li>
 <% 
 }
 %>

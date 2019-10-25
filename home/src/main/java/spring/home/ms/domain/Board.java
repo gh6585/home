@@ -7,6 +7,7 @@ public class Board {
 	int bno;
 	String title;
 	String nik;
+	String memo;
 	Date bdt;
 	int vs;
 	public int getBno() {
@@ -27,6 +28,12 @@ public class Board {
 	public void setNik(String nik) {
 		this.nik = nik;
 	}
+	public String getMemo() {
+		return memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
 	public Date getBdt() {
 		return bdt;
 	}
@@ -40,6 +47,7 @@ public class Board {
 		this.vs = vs;
 	}
 
+	
 	
 	
 	

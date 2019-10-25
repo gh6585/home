@@ -24,7 +24,7 @@
 <tr>
 	<td>${m.hno}</td>
 	<td>${m.email}</td>
-	<td>${m.id}</td>
+	<td>${m.nik}</td>
 	<td>${m.password}</td>
 </tr>
 

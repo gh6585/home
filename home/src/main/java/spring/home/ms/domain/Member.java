@@ -4,7 +4,7 @@ public class Member {
 	
 	protected int hno;
 	protected String email;
-	protected String id;
+	protected String nik;
 	protected String password;
 	public int getHno() {
 		return hno;
@@ -18,11 +18,11 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getId() {
-		return id;
+	public String getNik() {
+		return nik;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setNik(String nik) {
+		this.nik = nik;
 	}
 	public String getPassword() {
 		return password;
@@ -30,7 +30,7 @@ public class Member {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 
+	
+	
 }

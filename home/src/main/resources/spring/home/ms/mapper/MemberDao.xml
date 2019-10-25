@@ -8,7 +8,7 @@
 	<resultMap type="Member" id="listMap">
 		<id column="hno" property="hno"/>
 		<result column="email" property="email"/>
-		<result column="id" property="id"/>
+		<result column="nik" property="nik"/>
 		<result column="password" property="password"/>
 	
 	</resultMap>
@@ -25,14 +25,14 @@
 	
 	<!-- 회원가입 -->
 	<insert id="insert"  parameterType="Member">
-		insert into home(email,id,password) 
-		values(#{email},#{id},#{password});
+		insert into home(email,nik,password) 
+		values(#{email},#{nik},#{password});
 		
 	</insert>
 	
 	<!-- 로그인 -->  
 	 <select id="findEmail" resultMap="listMap" parameterType="map">
-	 	select id 
+	 	select nik 
 	 	from home 
 	 	where email=#{email} and password=#{password};
 	 

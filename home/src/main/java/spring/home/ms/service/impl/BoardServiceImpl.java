@@ -1,7 +1,6 @@
 package spring.home.ms.service.impl;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,10 +21,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public void add(Map<String, Object> board) {
+	public void add(Board board,String nik) {
 		
-		boardDao.insert(board);
+		boardDao.insert(board,nik);
 	}
+
 
 	
 

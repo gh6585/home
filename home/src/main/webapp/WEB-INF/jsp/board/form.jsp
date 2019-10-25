@@ -1,7 +1,12 @@
+<%@page import="spring.home.ms.domain.Member"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
@@ -10,7 +15,7 @@
 <body>
 
 <jsp:include page="../header.jsp"></jsp:include>
-<form action="add">
+<form action="add" method="post">
 <div id="bform">
 <table>
 	<tr>
@@ -24,7 +29,13 @@
 
 </table>
 <div id="bforminput">
-<input type="submit" value="확인">
+
+
+<% 
+String var=request.getAttribute(name)
+
+%>
+<button type="submit" value= var=>확인</button>
 <input type="button" value="최소" onclick="location.href='list'">
 </div>
 </div>
@@ -32,6 +43,11 @@
 </form>
 
 </body>
+
+<script>
+
+
+</script>
 
 <jsp:include page="../footer.jsp"></jsp:include>
 </html>
