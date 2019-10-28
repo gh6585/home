@@ -32,7 +32,6 @@
 
 
 <% 
-String var=request.getAttribute(name)
 
 %>
 <button type="submit" value= var=>»Æ¿Œ</button>
