@@ -7,6 +7,6 @@ import spring.home.ms.domain.Board;
 public interface BoardService {
 	
 	List<Board> boardList();
-	void add(Board board,String nik);
+	void add(Board board);
 	
 }

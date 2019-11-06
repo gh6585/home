@@ -7,5 +7,5 @@ import spring.home.ms.domain.Board;
 public interface BoardDao {
 
 	List<Board> getList();
-	Board insert(Board board,String nik);
+	Board insert(Board board);
 }

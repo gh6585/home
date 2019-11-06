@@ -37,12 +37,11 @@ public class boardController {
 	
 	
 	@RequestMapping("add")
-	public void add(Board board,String nik) {
+	public void add(Board board) {
 		
 		System.out.println(board);
-		System.out.println(nik);
 		
-		boardService.add(board,nik);
+		boardService.add(board);
 	}
 	
 	
