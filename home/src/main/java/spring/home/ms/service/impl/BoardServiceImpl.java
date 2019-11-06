@@ -21,9 +21,9 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public void add(Board board,String nik) {
+	public void add(Board board) {
 		
-		boardDao.insert(board,nik);
+		boardDao.insert(board);
 	}
 
 

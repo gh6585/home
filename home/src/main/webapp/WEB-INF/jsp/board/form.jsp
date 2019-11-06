@@ -15,6 +15,11 @@
 <body>
 
 <jsp:include page="../header.jsp"></jsp:include>
+<%
+Member loginUser =(Member)session.getAttribute("loginUser"); 
+String nik = loginUser.getNik();
+
+%>
 <form action="add" method="post">
 <div id="bform">
 <table>
@@ -24,21 +29,25 @@
 	<tr>
 		<td><textarea rows="20" cols="27" name="memo"></textarea></td>
 	</tr>
-	
+	 <tr>
+	   <td><input type="text" value="<%=nik %>" name="nik" style="hidden"></td>
+	 </tr>  
+	   
 
 
 </table>
-<div id="bforminput">
-
-
+</div>
+<div>
 <% 
   
 
 
+loginUser.getNik();
 %>
-<button type="submit" value= var=>확인</button>
-<input type="button" value="최소" onclick="location.href='list'">
 </div>
+<div>
+<button type="submit">확인</button>
+<input type="button" value="최소" onclick="location.href='list'">
 </div>
 
 </form>
