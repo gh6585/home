@@ -1,6 +1,8 @@
 <%@page import="spring.home.ms.domain.Member"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" 
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 <html>
 <!-- jQuery library -->
@@ -19,7 +21,7 @@
 <div id="bform">
 <table>
 	<tr>
-		<td>Á¦¸ñ<input type="text" name="title"></td>
+		<td>ì œëª©<input type="text" name="title"></td>
 	</tr>
 	<tr>
 		<td><textarea rows="20" cols="27" name="memo"></textarea></td>
@@ -36,8 +38,8 @@
 
 </div>
 <div>
-<button type="submit">È®ÀÎ</button>
-<input type="button" value="ÃÖ¼Ò" onclick="location.href='list'">
+<button type="submit">í™•ì¸</button>
+<input type="button" value="ìµœì†Œ" onclick="location.href='list'">
 </div>
 
 </form>

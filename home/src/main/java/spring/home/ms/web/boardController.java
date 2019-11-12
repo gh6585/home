@@ -37,11 +37,13 @@ public class boardController {
 	
 	
 	@RequestMapping("add")
-	public void add(Board board) {
+	public String add(Board board) {
 		
-		System.out.println(board);
+		System.out.println(board.toString());
 		
 		boardService.add(board);
+		
+		return "redirect:list";
 	}
 	
 	
