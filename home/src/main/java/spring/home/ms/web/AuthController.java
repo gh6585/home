@@ -34,7 +34,6 @@ public class AuthController {
 		
 		Member loginUser = authService.getMember(email, password);
 		
-		System.out.println(loginUser);
 		
 		if(loginUser != null) {
 			

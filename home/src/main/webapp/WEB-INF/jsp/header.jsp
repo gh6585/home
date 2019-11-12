@@ -1,6 +1,8 @@
 <%@page import="spring.home.ms.domain.Member"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java"
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 <html>
 <!-- jQuery library -->
@@ -17,15 +19,15 @@
 	Member loginUser = (Member)session.getAttribute("loginUser");
 if (loginUser == null){
 %>
-	<li><a href="/app/auth/form">�α���</a></li>
-	<li><a href="/app/home/form">ȸ������</a></li>
+	<li><a href="/app/auth/form">로그인</a></li>
+	<li><a href="/app/home/form">회원가입</a></li>
 <%
 } else {
 	
 
 %>
 	
-	<li><a href='/app/auth/logout'>�α׾ƿ�</a></li>
+	<li><a href='/app/auth/logout'>로그아웃</a></li>
 	<li id="nik">[<%=loginUser.getNik()%>]</li>
 <% 
 }
@@ -34,7 +36,7 @@ if (loginUser == null){
 
 <div>
 	<ul>
-		<li><a href='/app/board/list'>�Խ���</a></li>
+		<li><a href='/app/board/list'>게시판</a></li>
 	</ul>
 </div>
 

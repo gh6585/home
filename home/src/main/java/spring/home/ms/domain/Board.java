@@ -4,12 +4,13 @@ import java.sql.Date;
 
 public class Board {
 	
-	int bno;
-	String title;
-	String nik;
-	String memo;
-	Date bdt;
-	int vs;
+	protected int bno;
+	protected String title;
+	protected String memo;
+	protected String nik;
+	protected Date bdt;
+	protected int vs;
+	
 	public int getBno() {
 		return bno;
 	}
@@ -22,17 +23,17 @@ public class Board {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getNik() {
-		return nik;
-	}
-	public void setNik(String nik) {
-		this.nik = nik;
-	}
 	public String getMemo() {
 		return memo;
 	}
 	public void setMemo(String memo) {
 		this.memo = memo;
+	}
+	public String getNik() {
+		return nik;
+	}
+	public void setNik(String nik) {
+		this.nik = nik;
 	}
 	public Date getBdt() {
 		return bdt;
@@ -46,9 +47,14 @@ public class Board {
 	public void setVs(int vs) {
 		this.vs = vs;
 	}
-
+	@Override
+	public String toString() {
+		return "Board [bno=" + bno + ", title=" + title + ", memo=" + memo + ", nik=" + nik + ", bdt=" + bdt + ", vs="
+				+ vs + "]";
+	}
 	
 	
 	
 	
 }
+	
