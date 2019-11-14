@@ -25,6 +25,7 @@ public class AuthServiceImpl implements AuthService{
 		
 		return memberDao.findEmail(params);
 	}
+
 	
 	
 	

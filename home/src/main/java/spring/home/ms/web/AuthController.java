@@ -1,5 +1,7 @@
 package spring.home.ms.web;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -49,5 +51,13 @@ public class AuthController {
 		return "redirect:../home/list";
 	}
 	
+	@RequestMapping("kakaologin")
+	public String kakaologin(String accessToken,HttpSession session) {
+		
+				
+		
+		
+		return "";
+	}
 	
 }
