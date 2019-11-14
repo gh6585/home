@@ -46,6 +46,11 @@ public class boardController {
 		return "redirect:list";
 	}
 	
+	@RequestMapping("detail")
+	public void detail() {
+		
+	}
+	
 	
 	
 }
