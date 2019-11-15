@@ -5,4 +5,5 @@ import spring.home.ms.domain.Member;
 public interface AuthService {
 	
 	Member getMember(String id,String password);
+	String getres(String res);
 }

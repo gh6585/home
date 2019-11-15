@@ -38,6 +38,7 @@ maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
 <a id="kakao-login-btn"></a>
 <a href="http://developers.kakao.com/logout"></a>
 
+
 <script type='text/javascript'>
 //<![CDATA[
 // 사용할 앱의 JavaScript 키를 설정해 주세요.
@@ -50,9 +51,10 @@ Kakao.Auth.createLoginButton({
 	  Kakao.API.request({
 		  url:'/v1/user/me',
 		  success: function(res){
-			  alert(JSON.stringify(res.properties));
+			  alert(JSON.stringify(res.kaccount_email));
 			  alert(JSON.stringify(res.properties.nickname));
-
+			  
+			  location.href="../home/form?res="+res;
 		  }
 		  
 		  
@@ -63,6 +65,8 @@ Kakao.Auth.createLoginButton({
      alert(JSON.stringify(err));
   }
 });
+
+	
 //]]>
   
 </script>

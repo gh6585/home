@@ -52,11 +52,9 @@ public class AuthController {
 	}
 	
 	@RequestMapping("kakaologin")
-	public String kakaologin(String accessToken,HttpSession session) {
+	public String kakaologin(String res,HttpSession session) {
 		
-				
-		
-		
+		authService.getres(res);
 		return "";
 	}
 	
