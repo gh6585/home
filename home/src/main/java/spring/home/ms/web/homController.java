@@ -9,10 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import spring.home.ms.domain.Home;
 import spring.home.ms.domain.Member;
+import spring.home.ms.service.AuthService;
 import spring.home.ms.service.HomeService;
 
 
@@ -22,10 +22,13 @@ import spring.home.ms.service.HomeService;
 public class homController {
 	
 	HomeService homeService; 
+	AuthService authService;
 	ServletContext sc;
 	
-	public homController(HomeService homeService,ServletContext sc) {
+	
+	public homController(HomeService homeService,AuthService authService,ServletContext sc) {
 		this.homeService = homeService;
+		this.authService =authService;
 		this.sc = sc;
 	}
 	
@@ -46,7 +49,13 @@ public class homController {
 		
 	}
 	@GetMapping("form")
-	public void form() {}
+	public void form(String res) {
+		
+		if(res != null) {
+			authService.getres(res);
+			
+		}
+	}
 	
 	
 	
